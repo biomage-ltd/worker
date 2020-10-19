@@ -9,9 +9,11 @@ services:
         - GITHUB_PAT=${GITHUB_PAT}
     volumes:
       - ./r:/r:cached
+      - ./data:/data:cached
     expose:
       - "4000"
-
+    ports:
+      - "4000:4000"
   python:
     container_name: 'biomage-worker-python'
     build:
